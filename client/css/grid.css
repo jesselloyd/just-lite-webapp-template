@@ -1,0 +1,191 @@
+/* MOBILE FIRST APPROACH */
+
+/*
+.row
+splits up the page horizontally. You'll need a few of these to break up the content,
+and you can use them in your main wrapper, or within other divs.
+
+.col
+divides the section into columns. Each column has a left margin except the first one.
+Using .col:first-child { margin-left: 0; } means you don't need to use class="last" 
+anywhere. It works in all browsers since IE6.
+
+.group
+solves floating problems, by forcing the section to self clear its children (aka the
+clearfix hack). This is good in Firefox 3.5+, Safari 4+, Chrome, Opera 9+ and IE 6+.
+
+*/
+
+/*  ROW  */
+
+.row {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* GROUPING */
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1;
+    /* For IE 6/7 */
+}
+
+.col {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.col + .col {
+    margin-left: 0;
+}
+
+.span_1_of_12,
+.span_2_of_12,
+.span_3_of_12,
+.span_4_of_12,
+.span_5_of_12,
+.span_6_of_12,
+.span_7_of_12,
+.span_8_of_12,
+.span_9_of_12,
+.span_10_of_12,
+.span_11_of_12,
+.span_12_of_12 {
+    width: 100%;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.center-content {
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+    float: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center {
+    margin: 0 auto;
+    display: block;
+}
+
+.padding {
+	padding: 10px 20px;
+}
+
+.margin-no-vertical {
+    margin: 0 10px;
+}
+
+.margin-no-horizontal {
+    margin: 10px 0;
+}
+
+.padding-no-vertical {
+	padding: 0 10px;
+}
+
+.padding-no-horizontal {
+	padding: 10px 0;
+}
+
+.show-desktop-only-ib,
+.show-desktop-only-b {
+    display: none;
+}
+
+.show-mobile-only-b {
+    display: block;
+}
+
+.show-mobile-only-ib {
+    display: inline-block;
+}
+
+@media only screen and (min-width: 768px) {
+    .col:first-child {
+        margin-left: 0;
+    }
+
+    .col + .col {
+        margin-left: 1.6%;
+    }
+	
+	.span_4_of_12:nth-child(3n+4) {
+		margin-left: 0;
+	}
+	
+    .span_12_of_12 {
+        width: 100%;
+    }
+    .span_11_of_12 {
+        width: 91.53%;
+    }
+    .span_10_of_12 {
+        width: 83.06%;
+    }
+    .span_9_of_12 {
+        width: 74.6%;
+    }
+    .span_8_of_12 {
+        width: 66.13%;
+    }
+    .span_7_of_12 {
+        width: 57.66%;
+    }
+    .span_6_of_12 {
+        width: 49.2%;
+    }
+    .span_5_of_12 {
+        width: 40.73%;
+    }
+    .span_4_of_12 {
+        width: 32.26%;
+    }
+    .span_3_of_12 {
+        width: 23.8%;
+    }
+    .span_2_of_12 {
+        width: 15.33%;
+    }
+    .span_1_of_12 {
+        width: 6.866%;
+    }
+    .show-mobile-only-b,
+    .show-mobile-only-ib {
+        display: none;
+    }
+    .show-desktop-only-b {
+        display: block;
+    }
+    .show-desktop-only-ib {
+        display: inline-block;
+    }
+}

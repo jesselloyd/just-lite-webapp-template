@@ -1,0 +1,8 @@
+{
+	"opts" : {
+		"destination" : "./client/docs"
+	},
+	"templates" : {
+		"dateFormat" : "MMM Do YYYY, h:mm:ss a"
+	}
+}
