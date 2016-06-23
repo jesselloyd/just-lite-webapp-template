@@ -5,7 +5,7 @@ Just Lite Web Application Template
 v0.1.0
 </h3>
 <p align="center">
-![J L](client/img/favicon.png)
+<img src="https://raw.githubusercontent.com/jesselloyd/just-lite-webapp-template/master/client/img/favicon.png" alt="J L"/>
 </p>
 <p align="center">Configured by jesselloyd</p>
 
