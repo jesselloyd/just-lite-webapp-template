@@ -1,30 +1,44 @@
 @keyframes modal-fade-in {
-  0% {
-    opacity: 0;
-    margin-top: 500px; }
-  100% {
-    opacity: 1;
-    margin-top: 2rem; } }
+    0% {
+        opacity: 0;
+        margin-top: 500px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 2rem;
+    }
+}
 
 @keyframes modal-fade-out {
-  0% {
-    opacity: 1;
-    margin-top: 2rem; }
-  100% {
-    opacity: 0;
-    margin-top: 500px; } }
+    0% {
+        opacity: 1;
+        margin-top: 2rem;
+    }
+    100% {
+        opacity: 0;
+        margin-top: 500px;
+    }
+}
 
 @keyframes menu-slide-down {
-  0% {
-    margin-top: -500px; }
-  100% {
-    margin-top: 0; } }
+    0% {
+        margin-top: -500px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
 
 @keyframes menu-slide-up {
-  0% {
-    margin-top: 0px; }
-  100% {
-    margin-top: -500px; } }
+    0% {
+        margin-top: 0px;
+    }
+
+    100% {
+        margin-top: -500px;
+    }
+}
 
 @keyframes shake {
   2% {
@@ -127,122 +141,3 @@
     transform: translate(3px, 0) rotate(0); }
   0%, 100% {
     transform: translate(0, 0) rotate(0); } }
-
-html {
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', sans-serif; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
-body {
-  background-color: #eee;
-  color: #333; }
-
-.container {
-  margin: 0 auto;
-  padding: 10px; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #22A7F0; }
-
-p {
-  transition: 0.2s; }
-
-a {
-  text-decoration: none;
-  color: #22A7F0; }
-  a:hover {
-    color: #6BB9F0; }
-
-input,
-textarea,
-select {
-  border-radius: 2px;
-  border: 1px solid #ccc;
-  padding: 5px;
-  outline: none; }
-
-button {
-  outline: 0;
-  border: 0;
-  padding: 15px;
-  color: white;
-  background-color: #22A7F0;
-  transition: 0.1s ease-in-out;
-  cursor: pointer; }
-  button:hover {
-    background-color: #6BB9F0; }
-
-.error-msg {
-  color: tomato;
-  min-height: 18px; }
-
-.card {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  background-color: white;
-  border-radius: 2px; }
-  .card .card-title {
-    padding: 15px 15px 0 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #555; }
-  .card .card-title.large {
-    font-size: 22px; }
-  .card .card-body {
-    padding: 15px; }
-
-modal {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100; }
-  modal .modal-bg {
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0; }
-  modal .modal-box {
-    width: calc(100% - 2rem);
-    max-width: auto;
-    background-color: #ffffff;
-    border-radius: 3px;
-    margin: 2rem auto;
-    padding: 1rem;
-    font-size: 14px; }
-    modal .modal-box .modal-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin: 0 0 1rem;
-      padding: 0;
-      width: calc(100% - 5rem);
-      display: inline-block;
-      color: #555; }
-    modal .modal-box .modal-close {
-      float: right;
-      cursor: pointer;
-      font-size: 18px;
-      color: #777; }
-  modal .modal-box.fade-in {
-    animation: 0.1s modal-fade-in; }
-  modal .modal-box.fade-out {
-    animation: 0.1s modal-fade-out; }
-  modal .modal-box.error {
-    animation: 0.25s shake; }
-  modal .modal-box.error-flash {
-    background-color: #EF4836;
-    color: white;
-    transition: 0.1s ease-in-out; }
-  modal .modal-box.sm {
-    max-width: 400px; }
-  modal .modal-box.md {
-    max-width: 600px; }
-  modal .modal-box.lg {
-    max-width: 800px; }
-  modal button {
-    float: right; }

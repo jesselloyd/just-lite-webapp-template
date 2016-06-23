@@ -1,4 +1,29 @@
-<div class="card">
-	<div class="card-title large">Home</div>
-	<div class="card-body"></div>
+<div class="group">
+	<div class="row">
+		<div class="col span-6 offset-3">
+			<div class="card">
+				<div class="card-title large">Feature Test</div>
+				<div class="card-body center-content">
+					<button ng-click="App.sendRequest()">Send Request</button>
+					<p>{{App.testRequest}}</p>
+					<button ng-click="App.toggleModal()">Show Modal</button>
+					<button ng-click="App.toggleErrorModal()">Show Error Modal</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+<modal ng-if="App.modalShown" show="App.modalShown" action-text="Okay" title="Test Modal">
+	<p>This is a basic modal. No action is bound to its action button. You can quickly mock up modals that don't require functionality,
+	or you can pass functions to it via the action attribute.</p>
+
+	<p>The modal comes with built in error detection and has visual indicators
+	in the event of some action failing. This has been implemented with a promise-based system - if your promise is rejected, the
+	modal will interpret this as an error. Try it out with the Show Error Modal Button.</p>
+</modal>
+
+<modal ng-if="App.errorModalShown" show="App.errorModalShown" action-text="Error" action="App.sendError()" title="Modal With Error">
+	Click the Error button to view the effect generated when a modal action receives an error. The UI is your friend, use it
+	to alert users when something unexpected happens.
+</modal>

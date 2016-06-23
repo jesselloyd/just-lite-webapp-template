@@ -52,13 +52,12 @@ npm run jsdoc
 * Express Router Configured for SPA (Single Page Application)
 * MongoDB Centric Data Model
 * AngularJS Client Template
-
+* Socket IO Bi-Directional Server-Client Communication
 
 ### Features To Come (Shortly)
 
 * Karma/Jasmine Test Integration
 * Mocha Test Integration
-* Socket IO Bi-Directional Server-Client Communication
 
 The general workflow that you can benefit from by using this template is as follows:
 

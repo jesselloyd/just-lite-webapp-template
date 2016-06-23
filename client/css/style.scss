@@ -1,3 +1,5 @@
+@import 'animations';
+
 $primary-color: #22A7F0;
 $secondary-color: #6BB9F0;
 $text-color: #6C7A89;
@@ -16,6 +18,7 @@ html {
 
 body {
 	background-color: #eee;
+	color: #333;
 }
 
 .container {
@@ -23,26 +26,12 @@ body {
 	padding: 10px;
 }
 
-.center-content {
-	margin: 0 auto;
-	text-align: center;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	color: $primary-color;
 }
 
-button {
-	outline: 0;
-	border: 0;
-	padding: 15px;
-	color: white;
-	background-color: $primary-color;
-	transition: 0.1s ease-in-out;
-
-	&:hover {
-		background-color: $secondary-color;
-	}
+p {
+	transition: 0.2s;
 }
 
 a {
@@ -63,6 +52,24 @@ select {
 	outline: none;
 }
 
+button {
+	outline: 0;
+	border: 0;
+	padding: 15px;
+	color: white;
+	background-color: $primary-color;
+	transition: 0.1s ease-in-out;
+	cursor: pointer;
+	&:hover {
+		background-color: $secondary-color;
+	}
+}
+
+.error-msg {
+    color: tomato;
+    min-height: 18px;
+}
+
 .card {
 	box-shadow: $box-shadow;
 	margin: 10px;
@@ -73,7 +80,7 @@ select {
 		padding: 15px 15px 0 15px;
 		font-size: 18px;
 		font-weight: bold;
-		color: $primary-color;
+		color: #555;
 	}
 
 	.card-title.large {
@@ -83,4 +90,71 @@ select {
 	.card-body {
 		padding: 15px;
 	}
+}
+
+modal {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .modal-bg {
+        background-color: rgba(0,0,0,0.4);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .modal-box {
+        width: calc(100% - 2rem);
+        max-width: auto;
+        background-color: #ffffff;
+        border-radius: 3px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-size: 14px;
+        .modal-title {
+        	font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 1rem;
+            padding: 0;
+            width: calc(100% - 5rem);
+            display: inline-block;
+            color: #555;
+        }
+        .modal-close {
+            float: right;
+            cursor: pointer;
+            font-size: 18px;
+            color: #777;
+        }
+    }
+    .modal-box.fade-in {
+    	animation: 0.1s modal-fade-in;
+    }
+    .modal-box.fade-out {
+    	animation: 0.1s modal-fade-out;
+    }
+    .modal-box.error {
+    	animation: 0.25s shake;
+    }
+    .modal-box.error-flash {
+    	background-color: #EF4836;
+    	color: white;
+    	transition: 0.1s ease-in-out;
+    }
+    .modal-box.sm {
+        max-width: 400px;
+    }
+    .modal-box.md {
+        max-width: 600px;
+    }
+    .modal-box.lg {
+        max-width: 800px;
+    }
+    button {
+        float: right;
+    }
 }

@@ -2,29 +2,38 @@
 
 /*
 .row
-splits up the page horizontally. You'll need a few of these to break up the content,
+Splits up the page horizontally. You'll need a few of these to break up the content,
 and you can use them in your main wrapper, or within other divs.
 
 .col
-divides the section into columns. Each column has a left margin except the first one.
-Using .col:first-child { margin-left: 0; } means you don't need to use class="last" 
-anywhere. It works in all browsers since IE6.
+divides the section into columns, based on 12 columns for full width of the screen.
 
 .group
 solves floating problems, by forcing the section to self clear its children (aka the
 clearfix hack). This is good in Firefox 3.5+, Safari 4+, Chrome, Opera 9+ and IE 6+.
 
+.debug
+Want to just visualize something and see how your grid looks? Add this class to a
+parent container to highlight where your rows and grids are.
 */
-
-/*  ROW  */
 
 .row {
     clear: both;
     padding: 0px;
     margin: 0px;
+    width: 100%;
+    display: table;
 }
 
-/* GROUPING */
+.debug .row {
+    border: 1px solid #C12127;
+    padding: 2px;
+    margin: 2px 0;
+}
+
+.padding {
+    padding: 10px;
+}
 
 .group:before,
 .group:after {
@@ -47,22 +56,22 @@ clearfix hack). This is good in Firefox 3.5+, Safari 4+, Chrome, Opera 9+ and IE
     float: left;
 }
 
-.col + .col {
-    margin-left: 0;
+.debug .col {
+    border: 1px solid #3498DB;
 }
 
-.span_1_of_12,
-.span_2_of_12,
-.span_3_of_12,
-.span_4_of_12,
-.span_5_of_12,
-.span_6_of_12,
-.span_7_of_12,
-.span_8_of_12,
-.span_9_of_12,
-.span_10_of_12,
-.span_11_of_12,
-.span_12_of_12 {
+.span-1,
+.span-2,
+.span-3,
+.span-4,
+.span-5,
+.span-6,
+.span-7,
+.span-8,
+.span-9,
+.span-10,
+.span-11,
+.span-12 {
     width: 100%;
 }
 
@@ -96,96 +105,109 @@ clearfix hack). This is good in Firefox 3.5+, Safari 4+, Chrome, Opera 9+ and IE
     display: block;
 }
 
-.padding {
-	padding: 10px 20px;
-}
-
-.margin-no-vertical {
-    margin: 0 10px;
-}
-
-.margin-no-horizontal {
-    margin: 10px 0;
-}
-
-.padding-no-vertical {
-	padding: 0 10px;
-}
-
-.padding-no-horizontal {
-	padding: 10px 0;
-}
-
-.show-desktop-only-ib,
-.show-desktop-only-b {
+.show-large-only-ib,
+.show-large-only-b {
     display: none;
 }
 
-.show-mobile-only-b {
+.show-small-only-b {
     display: block;
 }
 
-.show-mobile-only-ib {
+.show-small-only-ib {
     display: inline-block;
 }
 
 @media only screen and (min-width: 768px) {
-    .col:first-child {
-        margin-left: 0;
+    .span-12 {
+        width: calc(12/12 * 100%);
+    }
+    .span-11 {
+        width: calc(11/12 * 100%);
+    }
+    .span-10 {
+        width: calc(10/12 * 100%);
+    }
+    .span-9 {
+        width: calc(9/12 * 100%);
+    }
+    .span-8 {
+        width: calc(8/12 * 100%);
+    }
+    .span-7 {
+        width: calc(7/12 * 100%);
+    }
+    .span-6 {
+        width: calc(6/12 * 100%);
+    }
+    .span-5 {
+        width: calc(5/12 * 100%);
+    }
+    .span-4 {
+        width: calc(4/12 * 100%);
+    }
+    .span-3 {
+        width: calc(3/12 * 100%);
+    }
+    .span-2 {
+        width: calc(2/12 * 100%);
+    }
+    .span-1 {
+        width: calc(1/12 * 100%);
     }
 
-    .col + .col {
-        margin-left: 1.6%;
+    .offset-1 {
+        margin-left: calc(1/12 * 100%);
     }
-	
-	.span_4_of_12:nth-child(3n+4) {
-		margin-left: 0;
-	}
-	
-    .span_12_of_12 {
-        width: 100%;
+
+    .offset-2 {
+        margin-left: calc(2/12 * 100%);
     }
-    .span_11_of_12 {
-        width: 91.53%;
+
+    .offset-3 {
+        margin-left: 25%;
     }
-    .span_10_of_12 {
-        width: 83.06%;
+
+    .offset-4 {
+        margin-left: calc(4/12 * 100%);
     }
-    .span_9_of_12 {
-        width: 74.6%;
+
+    .offset-5 {
+        margin-left: calc(5/12 * 100%);
     }
-    .span_8_of_12 {
-        width: 66.13%;
+
+    .offset-6 {
+        margin-left: 50%;
     }
-    .span_7_of_12 {
-        width: 57.66%;
+
+    .offset-7 {
+        margin-left: calc(7/12 * 100%);
     }
-    .span_6_of_12 {
-        width: 49.2%;
+
+    .offset-8 {
+        margin-left: calc(8/12 * 100%);
     }
-    .span_5_of_12 {
-        width: 40.73%;
+
+    .offset-9 {
+        margin-left: 75%;
     }
-    .span_4_of_12 {
-        width: 32.26%;
+
+    .offset-10 {
+        margin-left: calc(10/12 * 100%);
     }
-    .span_3_of_12 {
-        width: 23.8%;
+
+    .offset-11 {
+        margin-left: calc(11/12 * 100%);
     }
-    .span_2_of_12 {
-        width: 15.33%;
-    }
-    .span_1_of_12 {
-        width: 6.866%;
-    }
-    .show-mobile-only-b,
-    .show-mobile-only-ib {
+
+    .show-small-only-b,
+    .show-small-only-ib {
         display: none;
     }
-    .show-desktop-only-b {
+    .show-large-only-b {
         display: block;
     }
-    .show-desktop-only-ib {
+    .show-large-only-ib {
         display: inline-block;
     }
 }

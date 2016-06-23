@@ -1,7 +1,9 @@
 var config = require('../config');
 var mongoose = require('mongoose');
 
-var connect = () => {
+var db = {};
+
+db.connect = () => {
 	mongoose.connect(config.database);
 	var db = mongoose.connection;
 
@@ -12,4 +14,4 @@ var connect = () => {
 	});
 }
 
-module.exports = connect;
+module.exports = db;

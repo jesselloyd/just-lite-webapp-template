@@ -58,6 +58,7 @@ gulp.task('watch', ['minify-and-concat-js', 'concat-libs', 'minify-css'], functi
         notify: false,
         proxy: {
           target: 'http://localhost:8081',
+          ws: true,
           proxyReq: [
             function(proxyReq) {
               // required to override SPA routing returning HTML

@@ -3,20 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>App Title</title>
+	<link rel="icon" type="image/png" href="img/favicon.png" />
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="libs/angular.min.js"></script>
 	<script src="libs.min.js"></script>
 	<script src="app.min.js"></script>
-	<link rel="icon" type="image/png" href="img/favicon.png" />
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	  var socket = io();
+	  socket.on('connect', function(data) {
+	  });
+	</script>
 </head>
 <body ng-app="App" ng-controller="ApplicationController as App">
 	<div class="container">
 		<div class="center-content">
 			<h1>Web Application Template</h1>
-			<button ng-click="App.sendRequest()">Send Request</button>
-			<p>{{App.isSuccessfulRequest}}</p>
+			<a href="/home">Home</a> | 
 			<a href="/login">Login</a>
 		</div>
 		<ng-view></ng-view>
