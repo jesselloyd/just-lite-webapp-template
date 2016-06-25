@@ -15,9 +15,7 @@ router.post('/signup', (req, res) => {
 		var user = new User({
 			email: req.body.email,
 			username: req.body.username,
-			passwordHash: hash,
-			condition: req.body.condition,
-			type: req.body.type
+			passwordHash: hash
 		});
 
 		user.save((err) => {
@@ -32,7 +30,7 @@ router.post('/signup', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-	res.send("Test endpoint.");
+	res.json("Test endpoint.");
 });
 
 module.exports = router;

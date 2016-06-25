@@ -12,7 +12,7 @@ var jsdoc = require('gulp-jsdoc3');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
-gulp.task('minify-and-concat-js', function () {
+gulp.task('minify-and-concat-js', () => {
   gulp.src(['client/js/module.js', 'client/js/**/*.js'])
   .pipe(plumber())
   .pipe(jshint())
@@ -26,7 +26,7 @@ gulp.task('minify-and-concat-js', function () {
   .pipe(gulp.dest('client'));
 });
 
-gulp.task('concat-libs', function() {
+gulp.task('concat-libs', () => {
   gulp.src(['client/libs/*.min.js', '!client/libs/angular.min.js'])
   .pipe(plumber())
   .pipe(sourcemaps.init())
@@ -38,7 +38,7 @@ gulp.task('concat-libs', function() {
   .pipe(gulp.dest('client'));
 });
 
-gulp.task('minify-css', function() {
+gulp.task('minify-css', () => {
 	gulp.src('client/css/style.css')
   .pipe(plumber())
   .pipe(sourcemaps.init())
@@ -50,13 +50,13 @@ gulp.task('minify-css', function() {
   .pipe(browserSync.stream());
 });
 
-gulp.task('generate-jsdoc', function(cb) {
+gulp.task('generate-jsdoc', (cb) => {
   var jsdocConfig = require('./jsdoc.conf.json');
   gulp.src(['api/**/*.js', 'push/*.js', 'middleware/*.js', 'data/models/*.js'], {read: false})
   .pipe(jsdoc(jsdocConfig, cb));
 });
 
-gulp.task('watch', ['minify-and-concat-js', 'concat-libs', 'minify-css'], function () {
+gulp.task('watch', ['minify-and-concat-js', 'concat-libs', 'minify-css'], () => {
   if (config.environment === 'development') {
       browserSync.init({
         notify: false,
