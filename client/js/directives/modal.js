@@ -42,16 +42,13 @@ function Modal($q, $timeout) {
                         promise.then(function(res) {
                             if (res.clearBindings) {
                                 scope.clearBindings = res.clearBindings;
-                            } else {
-                                scope.clearBindings = null;
                             }
                             scope.close();
                         }, function(err) {
-                            if (res.clearBindings) {
+                            if (err.clearBindings) {
                                 scope.clearBindings = res.clearBindings;
-                            } else {
-                                scope.clearBindings = null;
-                            }                            scope.errorFlash = true;
+                            }                         
+                            scope.errorFlash = true;
                             $timeout(function() {
                                 scope.errorFlash = false;
                                 scope.error = true;
