@@ -1,7 +1,7 @@
 function AuthenticationInterceptor($window) {
     return {
         request: function(config) {
-            var token = $window.localStorage['token'];
+            var token = $window.localStorage.token;
             if (token) {
                 config.headers['x-access-token'] = token;
             }

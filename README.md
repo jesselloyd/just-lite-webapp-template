@@ -47,7 +47,7 @@ npm run jsdoc
 * Source Bundling
 * SCSS Preprocessor
 * Brower Sync File Tree Watch
-* JSDOC Integration
+* JSDoc Integration
 * Secure JSON Web Token Authentication
 * Express Router Configured for SPA (Single Page Application)
 * MongoDB Centric Data Model

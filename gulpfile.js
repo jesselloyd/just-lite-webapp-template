@@ -9,10 +9,14 @@ var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var jsdoc = require('gulp-jsdoc3');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
 
 gulp.task('minify-and-concat-js', function () {
   gulp.src(['client/js/module.js', 'client/js/**/*.js'])
   .pipe(plumber())
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish', {beep : true}))
   .pipe(sourcemaps.init())
   .pipe(concat('app.min.js'))
   .pipe(ngAnnotate())

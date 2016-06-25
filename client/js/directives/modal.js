@@ -40,11 +40,18 @@ function Modal($q, $timeout) {
                     var promise = scope.action();
                     if (promise && typeof promise.then === 'function') {
                         promise.then(function(res) {
-                            res.clearBindings ? scope.clearBindings = res.clearBindings : null;
+                            if (res.clearBindings) {
+                                scope.clearBindings = res.clearBindings;
+                            } else {
+                                scope.clearBindings = null;
+                            }
                             scope.close();
                         }, function(err) {
-                            err.clearBindings ? scope.clearBindings = err.clearBindings : null;
-                            scope.errorFlash = true;
+                            if (res.clearBindings) {
+                                scope.clearBindings = res.clearBindings;
+                            } else {
+                                scope.clearBindings = null;
+                            }                            scope.errorFlash = true;
                             $timeout(function() {
                                 scope.errorFlash = false;
                                 scope.error = true;

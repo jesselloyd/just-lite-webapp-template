@@ -5,21 +5,21 @@ function ApplicationController($http, $q) {
 		$http.get('/test').then(function(res) {
 			_this.testRequest = res.data;
 		});
-	}
+	};
 
 	_this.requestService = function() {
 		return $http.get('/test');
-	}
+	};
 
 	_this.modalShown = false;
 	_this.toggleModal = function() {
 		_this.modalShown = !_this.modalShown;
-	}
+	};
 
 	_this.errorModalShown = false;
 	_this.toggleErrorModal = function() {
 		_this.errorModalShown = !_this.errorModalShown;
-	}
+	};
 
 	_this.sendError = function() {
 		return $q(function(resolve, reject) {
@@ -28,7 +28,7 @@ function ApplicationController($http, $q) {
 			};
 			reject(error);
 		});
-	}
+	};
 }
 
 angular.module('App')
