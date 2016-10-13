@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
 	<script src="libs/angular.min.js"></script>
 	<script src="libs.min.js"></script>
 	<script src="app.min.js"></script>
@@ -19,10 +19,16 @@
 	</script>
 </head>
 <body ng-app="App" ng-controller="ApplicationController as App">
+	<nav>
+	<div class="pull-right hide-desktop">
+		<i class="ion-navicon"></i>
+	</div>
+	</nav>
 	<div class="container">
 		<div class="center-content">
 			<h1>Web Application Template</h1>
-			<a href="/home">Home</a> | 
+			<div>created by Jesse Lloyd</div>
+			<a href="/home">Home</a> |
 			<a href="/login">Login</a>
 		</div>
 		<ng-view></ng-view>

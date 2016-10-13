@@ -130,7 +130,7 @@
 
 html {
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', sans-serif; }
+  font-family: 'Muli', 'Helvetica Neue', sans-serif; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -144,7 +144,8 @@ body {
   padding: 10px; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #22A7F0; }
+  color: #22A7F0;
+  font-family: 'Noto Sans', sans-serif; }
 
 p {
   transition: 0.2s; }
@@ -154,6 +155,16 @@ a {
   color: #22A7F0; }
   a:hover {
     color: #6BB9F0; }
+
+nav {
+  background-color: #22A7F0;
+  color: white;
+  padding: 15px;
+  height: 50px; }
+  nav i {
+    font-size: 30px;
+    position: relative;
+    top: -8px; }
 
 input,
 textarea,
@@ -166,11 +177,12 @@ select {
 button {
   outline: 0;
   border: 0;
-  padding: 15px;
+  padding: 10px 15px;
   color: white;
   background-color: #22A7F0;
   transition: 0.1s ease-in-out;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-bottom: 5px; }
   button:hover {
     background-color: #6BB9F0; }
 
@@ -246,3 +258,15 @@ modal {
     max-width: 800px; }
   modal button {
     float: right; }
+
+.hide-mobile {
+  display: none; }
+
+.hide-desktop {
+  display: initial; }
+
+@media only screen and (min-width: 768px) {
+  .hide-mobile {
+    display: initial; }
+  .hide-desktop {
+    display: none; } }

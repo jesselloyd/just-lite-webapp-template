@@ -9,7 +9,7 @@ $box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
 
 html {
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Muli', 'Helvetica Neue', sans-serif;
 }
 
 *, *:before, *:after {
@@ -28,6 +28,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	color: $primary-color;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 p {
@@ -43,7 +44,20 @@ a {
 	}
 }
 
-input, 
+nav {
+    background-color: $primary-color;
+    color: white;
+    padding: 15px;
+    height: 50px;
+
+    i {
+        font-size: 30px;
+        position: relative;
+        top: -8px;
+    }
+}
+
+input,
 textarea,
 select {
 	border-radius: 2px;
@@ -55,11 +69,12 @@ select {
 button {
 	outline: 0;
 	border: 0;
-	padding: 15px;
+	padding: 10px 15px;
 	color: white;
 	background-color: $primary-color;
 	transition: 0.1s ease-in-out;
 	cursor: pointer;
+    margin-bottom: 5px;
 	&:hover {
 		background-color: $secondary-color;
 	}
@@ -156,5 +171,23 @@ modal {
     }
     button {
         float: right;
+    }
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.hide-desktop {
+    display: initial;
+}
+
+@media only screen and (min-width: 768px) {
+    .hide-mobile {
+        display: initial;
+    }
+
+    .hide-desktop {
+        display: none;
     }
 }

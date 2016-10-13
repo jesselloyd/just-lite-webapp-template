@@ -1,12 +1,14 @@
 function ApplicationController($http, $q) {
-	var _this = this; 
+	var _this = this;
 
+	// delete this in actual applications - test function for demo purposes
 	_this.sendRequest = function() {
 		$http.get('/test').then(function(res) {
 			_this.testRequest = res.data;
 		});
 	};
 
+	// delete this in actual applications - test function for demo purposes
 	_this.requestService = function() {
 		return $http.get('/test');
 	};

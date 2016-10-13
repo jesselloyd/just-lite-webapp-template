@@ -19,8 +19,8 @@ parent container to highlight where your rows and grids are.
 
 .row {
     clear: both;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     width: 100%;
     display: table;
 }

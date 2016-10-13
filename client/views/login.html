@@ -1,1 +1,17 @@
-<h1>Login</h1>
+<div class="row" ng-controller="LoginController as Login">
+    <div class="col offset-3 span-6">
+        <div class="card center-content">
+            <div class="card-body">
+                <div class="text-center">
+                    <button ng-click="Login.login()">Log In</button>
+                    <button ng-click="Login.authenticatedRoute()">Private (Only Available on Login)</button>
+                    <button ng-click="Login.logout()">Log Out</button>
+                    <button ng-click="Login.checkCsrfProtection()">Do you have CSRF?</button>
+                    <p>Could access private endpoint: {{Login.isThrough}}</p>
+                    <p>Is this sent with a valid CSRF token?: {{Login.isProtected}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

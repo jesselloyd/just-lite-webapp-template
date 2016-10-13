@@ -1,7 +1,7 @@
 <div class="modal-bg" ng-show="show">
     <div class="modal-box md fade-in" ng-class="{'error' : error, 'error-flash' : errorFlash, 'fade-in' : fadeIn, 'fade-out' : fadeOut }">
         <div class="modal-title">{{title}}</div>
-        <i class="fa fa-close modal-close" ng-click="close()"></i>
+        <i class="ion-close-round modal-close" ng-click="close()"></i>
         <div class="clearfix"></div>
         <ng-transclude></ng-transclude>
         <p class="error-msg">{{errorMessage}}</p>
